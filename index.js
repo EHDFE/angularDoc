@@ -19,10 +19,10 @@ else {
   process.env.PORT = 3333;
 }
 switch(process.argv[2]) {
-    case '-r' || '--review':
+    case '-p' || '--preview':
     requireModule = require('./compile')
     break;
-    case '-p' || '--push':
+    case '-push' || '--push':
     requireModule = require('./push');
     break;
     default:
