@@ -1,25 +1,22 @@
 var program = require('commander');
-const path = require('path');
-const pgk = require('./package.json');
+var path = require('path');
+var pgk = require('./package.json');
 
 // dirs to find plugins
 program
 .version(pgk.version)
-.option('-r, --review', 'review current component in the demo;')
-.option('-p, --push', 'push current component to the demo web;')
+.option('-r, --review', 'review current component;')
+.option('-push, --push', 'push current component to the demo web;')
 .parse(process.argv);
 
-
-var isReView = process.argv[2] === 'review';
-let requireModule;
-
+var requireModule;
 process.env.PORT = process.argv[3];
 if(process.env.PORT === parseInt(process.env.PORT, 10) + '' && (process.env.PORT + '').length === 4) {}
 else {
   process.env.PORT = 3333;
 }
 switch(process.argv[2]) {
-    case '-p' || '--preview':
+    case '-r' || '--review':
     requireModule = require('./compile')
     break;
     case '-push' || '--push':
