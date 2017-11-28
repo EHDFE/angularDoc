@@ -1,6 +1,6 @@
 {
   "name": "angulardoc",
-  "version": "0.0.35",
+  "version": "0.1.1",
   "description": "angular directive to review by note",
   "main": "index.js",
   "bin": {
@@ -49,3 +49,4 @@
     "npm": "^3.0.0"
   }
 }
+

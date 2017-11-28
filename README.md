@@ -9,13 +9,13 @@ angular 组件（指令）通过对注释的编译生成预览DEMO，方便组�
 npm i -g angulardoc
 ```
 
-在组件当前目录中执行此命令后可打开预览页面
+在组件当前目录中执行此命令后,可打开预览页面
 ```sh
 angulardoc -p
 angulardoc --preview
 ```
 
-在组件当前目录中执行此命令后把组件DEMO数据push到组件库中
+在组件当前目录中执行此命令后,把组件注释编译后的数据push到组件库中
 ```sh
 angulardoc -push
 ```
