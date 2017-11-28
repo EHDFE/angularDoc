@@ -12,7 +12,6 @@ npm i -g angulardoc
 在组件当前目录中执行此命令后,可打开预览页面检验当前组件效果
 ```sh
 angulardoc -r
-angulardoc --review
 ```
 
 在组件当前目录中执行此命令后,把组件注释编译后的数据push到组件库中

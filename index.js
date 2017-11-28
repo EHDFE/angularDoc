@@ -5,8 +5,8 @@ var pgk = require('./package.json');
 // dirs to find plugins
 program
 .version(pgk.version)
-.option('-r, --review', 'review current component;')
-.option('-push, --push', 'push current component to the demo web;')
+.option('-r ', '--review current component;')
+.option('-push ', '--push current component to the demo web;')
 .parse(process.argv);
 
 var requireModule;
@@ -16,10 +16,10 @@ else {
   process.env.PORT = 3333;
 }
 switch(process.argv[2]) {
-    case '-r' || '--review':
+    case '-r':
     requireModule = require('./compile')
     break;
-    case '-push' || '--push':
+    case '-p':
     requireModule = require('./push');
     break;
     default:
