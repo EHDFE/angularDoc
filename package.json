@@ -1,6 +1,6 @@
 {
   "name": "angulardoc",
-  "version": "0.1.5",
+  "version": "0.1.9",
   "description": "angular directive to review by note",
   "main": "index.js",
   "bin": {
@@ -31,6 +31,7 @@
     "chalk": "^1.1.3",
     "growl": "^1.9.2",
     "http-proxy": "^1.16.2",
+    "http-proxy-middleware": "^0.17.4",
     "ip": "^1.1.5",
     "koa": "^2.2.0",
     "koa-logger": "^3.0.0",
@@ -39,14 +40,10 @@
     "koa-router": "^7.3.0",
     "open": "^0.0.5",
     "tiny-lr": "^1.0.5",
-    "webpack": "^3.0.0",
-    "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2.5.0",
-    "webpack-legacy": "^1.15.0"
+    "webpack": "^3.0.0"
   },
   "engines": {
     "node": ">=7.6.0",
     "npm": "^3.0.0"
   }
 }
-

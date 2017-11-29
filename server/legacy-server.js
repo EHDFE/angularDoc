@@ -60,12 +60,12 @@ module.exports = (options, projectConfig) => {
 
 
   // start server
-  devServer.listen(port);
+  devServer.listen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      (port);
  
   
 
-  //if (open) {
-    //const host = ip.address();
-    //opn(`http://${host}:${port}`);
-  //}
+  if (open) {
+    const host = ip.address();
+    opn(`http://${host}:${port}`);
+  }
 };

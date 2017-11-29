@@ -68,6 +68,7 @@ let isExistsFn = function(currentPath) {
 				oldObj[oldItem.keyName] = oldItem;
 			});
 			newJson.map(newItem => {
+				console.log(chalk.green('正在push '+newItem.keyName+'...'))
 				if(oldObj[newItem.keyName]) {
 					var pz = new PZ(process.cwd()+'\.npm-init.js', {yes: true})
 					pz.backupFile = def;

@@ -5,8 +5,8 @@ var pgk = require('./package.json');
 // dirs to find plugins
 program
 .version(pgk.version)
-.option('-r ', '--review current component;')
-.option('-push ', '--push current component to the demo web;')
+.option('-r, --review', 'review current component;')
+.option('-p, --push', 'push current component to the demo web;')
 .parse(process.argv);
 
 var requireModule;
@@ -15,6 +15,7 @@ if(process.env.PORT === parseInt(process.env.PORT, 10) + '' && (process.env.PORT
 else {
   process.env.PORT = 3333;
 }
+
 switch(process.argv[2]) {
     case '-r':
     requireModule = require('./compile')
@@ -23,7 +24,8 @@ switch(process.argv[2]) {
     requireModule = require('./push');
     break;
     default:
-    requireModule = require('./src/index');
+    //requireModule = require('./src/index');
+    requireModule = console.log(program.outputHelp());
     break;
 }
 module.exports = requireModule;

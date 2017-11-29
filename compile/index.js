@@ -4,9 +4,11 @@ var compile = require("./compile.js");
 var fs = require("fs");
 var c = require('child_process');
 var path = require('path');
+var open = require('open');
 const chalk = require('chalk');
 var index = 0;
 process.env.compileJson = path.join(process.argv[1].replace('\\bin\\angularcode',''), '/review/compile.json');
+var currentFilePath = currentPath;
 let setAlertError = function(name) {
 	clearTimeout(name);
 	return setTimeout(function() {
@@ -33,11 +35,24 @@ let isExistsFn = function(currentPath) {
 			let server = require('../server/index');
 			server.action({
 				port: process.env.PORT,
-				open: true,
+				open: false,
 				reload: false
 			});
-			c.exec(`start http://127.0.0.1:${process.env.PORT}/view/#/compile/compile`);
-			c.exec(`open http://127.0.0.1:${process.env.PORT}/view/#/compile/compile`);
+			var a = open(`http://127.0.0.1:${process.env.PORT}/view/#/compile/compile`)
+			var filePath = path.join(currentFilePath);
+			fs.watch(filePath, function (event, filename) {
+				if (filename && filename.indexOf('.js') > 0) {
+				process.env.compileJsonData = JSON.stringify(new compile.ReplaceModule({
+					projects: [currentFilePath],
+					//branch: ['trunk'],
+					type: 'angularDirective',
+					jsonPath: ''
+				}).jsons);
+				} else {
+					console.log('filename not provided');
+				}
+			})
+			console.log(filePath + ' 被监听中...');
 			console.log(chalk.green('open http://127.0.0.1:'+process.env.PORT+'/view/#/compile/compile'));
 		}
 	});
