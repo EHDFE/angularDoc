@@ -16,5 +16,10 @@ angulardoc -r
 
 在组件当前目录中执行此命令后,把组件注释编译后的数据push到组件库中
 ```sh
-angulardoc -push
+angulardoc -p
+```
+
+创建组件(angular directive)
+```sh
+angulardoc -c
 ```

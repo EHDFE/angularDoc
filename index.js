@@ -7,6 +7,7 @@ program
 .version(pgk.version)
 .option('-r, --review', 'review current component;')
 .option('-p, --push', 'push current component to the demo web;')
+.option('-c, --create', 'create new angular directive;')
 .parse(process.argv);
 
 var requireModule;
@@ -22,6 +23,9 @@ switch(process.argv[2]) {
     break;
     case '-p':
     requireModule = require('./push');
+    break;
+    case '-c':
+    requireModule = require('./create');
     break;
     default:
     //requireModule = require('./src/index');

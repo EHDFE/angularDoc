@@ -2,10 +2,10 @@
 var currentPath = process.cwd();
 var compile = require("./compile.js");
 var fs = require("fs");
-var c = require('child_process');
 var path = require('path');
 var open = require('open');
-const chalk = require('chalk');
+var chalk = require('chalk');
+
 var index = 0;
 process.env.compileJson = path.join(process.argv[1].replace('\\bin\\angularcode',''), '/review/compile.json');
 var currentFilePath = currentPath;
