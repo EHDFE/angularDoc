@@ -1,4 +1,8 @@
 # angularcode
+---
+
+[![npm](https://img.shields.io/npm/v/angulardoc.svg)]()
+[![npm](https://img.shields.io/npm/dt/angulardoc.svg)]()
 
 angular 组件（指令）通过对注释的编译生成预览DEMO，方便组件的共享、复用。
 
