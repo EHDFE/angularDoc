@@ -1,5 +1,4 @@
 # angularcode
----
 
 [![npm](https://img.shields.io/npm/v/angulardoc.svg)]()
 [![npm](https://img.shields.io/npm/dt/angulardoc.svg)]()
